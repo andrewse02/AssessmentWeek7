@@ -1,0 +1,7 @@
+doublerInsert appears to scale much worse comapred to doublerAppend. As the input size gets larger, the runtime increases significantly more for insert.
+The best example of this is the runtimes between extraLargeArray(about 1s) and absoluteUnitArray(about 19s).
+
+The reason that insert runs much slower is due to the behavior of the Array#push() Array#unshift() methods. unshift is a much less efficient method for one key reason.
+while push() appends an element to the end of the array, unshift() appends it to the beginning. And the way that arrays are indexed, the latter takes more work.
+This is because all the previous indexes now need to be (pardon the term) shifted by one. So the program now has to essentially loop through the rest of the array
+to move all the elements over. The time complexity for doublerInsert is O(n^2), while doulblerAppend is O(n).
