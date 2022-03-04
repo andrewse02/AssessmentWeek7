@@ -2,4 +2,5 @@ const isPangram = (string) => new Set(string.toLowerCase().split("").filter((cha
 
 console.log(isPangram("The quick brown fo jumps over the lazy dog!"));
 
+// Time Complexity: O(n)
 // Space Complexity: O(n)
